@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Validation using Regular Expression</title>
+	</head>
+	<body>
+		<form>
+			<table>
+				<tr>
+					<td>Name<td>
+					<input type="text" id="name" maxlenght="10" minlength="3" pattern="[a-zA-Z ]{3,10}" required oninvalid="this.setCustomValidity('name should be between 3 and 10 characters')"
+  oninput="this.setCustomValidity('')">
+				</tr>
+				<tr>
+					<td>Date of Birth<td>
+					<input type="input" id="dob" pattern="^((0[1-9]|[12][0-9]|3[0-3])\/(0[1-9]|1[012])\/\d\d\d\d)$|(^((0[1-9]|[12][0-9]|3[0-3])\/(0[1-9]|1[012])\/\d\d)$)" required placeholder="DD/MM/YYYY or DD/MM/YY" oninvalid="this.setCustomValidity('DOB should be in the format DD/MM/YY or DD/MM/YYYY')"
+  oninput="this.setCustomValidity('')">
+				</tr>
+				<tr>
+					<td>Phone Number<td>
+					<input type="text" id="phone" maxlenght=12 required pattern="^\d{3}-\d{4}-\d{4}$" placeholder="xxx-xxxx-xxxx" oninvalid="this.setCustomValidity('Phone number should be in the format xxx-xxxx-xxxx')"
+  oninput="this.setCustomValidity('')">
+				</tr>
+				<tr>
+					<td>Email<td>
+					<input type="email" id="email" required>
+				</tr>
+				<tr>
+					<td>Graduation Level</td>
+					<td id="grad" onchange="setQualification()">
+						<input type="radio" name="graduation" id="UG" value="UG" required checked><label for="UG">UG</label>
+					    <input type="radio" name="graduation" id="PG" vlaue="PG"><label for="PG">PG</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Qualification</td>
+					<td><select name="qualification" required id="qualification">
+						<option value="B.Sc">B.Sc</option>
+						<option value="B.A">B.A</option>
+						<option value="B.Com">B.Com</option>
+					</td>
+				</tr>
+				<tr>
+					<td><button type="button" onclick="preview()">Preview</button></td>
+					<td><button type="button" onclick="submit()">Submit</button></td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			UG = ['B.Sc','B.A','B.Com'];
+			PG = ['M.A','M.Tech','MCA','MBA'];
+			function setQualification(){
+				graduationLevel = document.querySelector('input[name="graduation"]:checked').value;
+				if(graduationLevel=="UG"){
+					deleteQualifcations();
+					UG.forEach(populate);
+				}
+				else{
+					deleteQualifcations();
+					PG.forEach(populate);					
+				}
+			}
+			function populate(item,index,arr){
+				let select = document.getElementById("qualification");
+				var opt = document.createElement("option");
+				opt.textContent=item;
+				opt.value=item;
+				select.appendChild(opt);
+			}
+			function deleteQualifcations(){
+				var parent = document.getElementById("qualification")
+				var child = parent.lastElementChild;
+				while(child){
+					parent.removeChild(child);
+					child = parent.lastElementChild;
+				}
+			}
+			function submit(){
+				var Name = document.getElementById("name").value;
+				var DOB = document.getElementById("dob").value;
+				var Phone = document.getElementById("phone").value;
+				var Email = document.getElementById("email").value;
+				var Qualification = document.getElementById("qualification").value;
+				var Graduation = document.querySelector('input[name="graduation"]:checked');
+
+				document.getElementById("name").value = Name;
+				document.getElementById("dob").value = DOB;
+				document.getElementById("phone").value = Phone;
+				document.getElementById("email").value = Email;
+				document.getElementById("qualification").value = Qualification;
+				document.querySelector('input[name="graduation"]:checked') =Graduation;
+				
+				
+			}
+			function preview(){
+				const Preview = window.open();
+				previewText = `Name:${document.getElementById('name').value}<br>DOB:${document.getElementById('dob').value}<br>Email:${document.getElementById('email').value}<br>Graduation Level:${document.querySelector('input[name="graduation"]:checked').value}<br>Qualification:${document.getElementById('qualification').value}`;
+				Preview.document.write(previewText);
+			}
+		</script>
+	</body>
+</html>

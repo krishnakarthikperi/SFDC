@@ -1,0 +1,27 @@
+package Session3.exception;
+
+
+public class ExceptionDemo {
+	
+	public static int test() {
+		int a=10;
+		try {
+			String string = null;
+			return string.toString();
+		}
+		finally {
+return "Hello Finally";			
+		}
+	}
+	public static void main(String[] args) {
+		//Calculator obj = new Calculator();
+		//test();
+		System.out.println(test());
+		try {
+			obj.calculation();
+		}
+		catch (ArithmeticException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

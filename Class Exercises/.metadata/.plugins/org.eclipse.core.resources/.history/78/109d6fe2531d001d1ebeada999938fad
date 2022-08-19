@@ -1,0 +1,108 @@
+package Session2;
+
+import java.util.*;
+
+class User{
+	String name;
+	String password;
+	static ArrayList<Client> clientList;
+	static ArrayList<Visitor> visitorList;
+	
+	public User(String name, String password) {
+		super();
+		this.name = name;
+		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(getClass() != obj.getClass()) {return false;}
+		User u = (User) obj;
+		if(this.name==u.name && this.password == u.password) {return true;}
+		return false;
+	}
+	public static void registerUser() {
+		Scanner usrip = new Scanner(System.in);
+		System.out.println("Please enter new username");
+		usrip.nextLine();
+		String username = usrip.nextLine();
+		System.out.println("Please enter your password");
+		String password = usrip.nextLine();
+		System.out.println("Do you want to signup as Client or Visitor. \n Choose among the following options. \n1.Client\n2.Visitor");
+		int userChoice = usrip.nextInt();
+		if(userChoice==1) {
+			Client uClient = new Client(username,password);
+			clientList.add(uClient); 
+		}
+		else if(userChoice==2) {
+			Visitor uVisitor = new Visitor(username,password);										
+			visitorList.add(uVisitor); 				
+		}
+	}
+	public static boolean loginUser() {
+		Scanner usrip = new Scanner(System.in);
+		System.out.println("Please enter your username");
+		usrip.nextLine();
+		String username = usrip.nextLine();
+		System.out.println("Please enter your password");
+		String password = usrip.nextLine();
+		System.out.println("Do you want to login as Client or Visitor. \n Choose among the following options. \n1.Client\n2.Visitor");
+		int userChoice = usrip.nextInt();
+		if(userChoice==1) {
+			Client u = new Client(username,password);
+			if(clientList.contains(u)) return true;
+		}
+		else if(userChoice==2) {
+			Visitor u = new Visitor(username,password);										
+			if(visitorList.contains(u)) return true;
+		}
+		return false;
+	}
+	
+	
+	
+}
+
+class Client extends User{
+	public Client(String name, String password) {
+		super(name, password);
+	}
+	
+}
+
+class Visitor extends User{
+	public Visitor(String name, String password) {
+		super(name, password);
+	}
+	public boolean loginUser() {
+		return visitorList.contains(this);
+	}
+	
+}
+
+public class ToDoManager {
+
+	public static void main(String[] args) {
+		Scanner usrip = new Scanner(System.in);
+		System.out.println("Welcome to To-Do Manager: \n Please LogIn or SignUp to Continue. \n Choose among the following options. \n1.Login\n2.SignUp");
+		int loginChoice = usrip.nextInt();
+		if(loginChoice==1) {User.loginUser();}
+		else if(loginChoice==2) {
+			User.registerUser(); 
+			System.out.println("Registration completed\n Please login now!");
+			User.loginUser();}
+	}
+
+}

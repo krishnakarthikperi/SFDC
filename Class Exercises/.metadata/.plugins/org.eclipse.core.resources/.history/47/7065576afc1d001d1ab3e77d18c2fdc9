@@ -1,0 +1,21 @@
+package Session3.interfaces;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class FunctionalInterfaceDemo {
+
+	public static void main(String[] args) {
+		//create a list of Strings
+		List<String> name = Arrays.asList("John","Jack","Harry","James","Tom");
+		
+		//get the names that start with J
+		Predicate<String> p = (s).startsWith("J");
+		System.out.println("Names starting with J");
+		for(String n:name) {
+			if(p.test(n)) System.out.println(n);
+		}
+	}
+
+}

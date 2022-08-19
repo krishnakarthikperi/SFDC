@@ -1,0 +1,2 @@
+ALTER TABLE cust_table
+ADD COLUMN E_mail VARCHAR(50);

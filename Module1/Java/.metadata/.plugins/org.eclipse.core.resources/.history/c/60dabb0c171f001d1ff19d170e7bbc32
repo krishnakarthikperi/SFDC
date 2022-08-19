@@ -1,0 +1,26 @@
+package labExercises.lab8.com.eis.service;
+
+import labExercises.lab8.com.eis.bean.Employee;
+
+public class EmployeeServiceImpl implements EmployeeService{
+
+	@Override
+	public Employee getEmployeeDetails(int id) {
+		for(Employee e:Employee.getEmployeeList()) {
+			if(e.getId()==id) {
+				return e;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public String getInsuranceScheme(double salary, String designation) {
+		if((salary>5000 && salary<20000)&& designation=="System Associate") return "Scheme C";
+		else if((salary>=20000 && salary<40000)&& designation=="Programmer") return "Scheme B";
+		else if(salary>=40000 && designation=="Manager") return "Scheme A";
+		else if(salary<5000 && designation=="Clerk") return "No Scheme";
+		return "Enter correct details!!";
+	}
+
+}

@@ -1,0 +1,80 @@
+<! DOCTYPE html> 
+<html> 
+	<head> 
+		<meta name="viewport" content="height=device-height,width=device-width,userscalable=no" /> 
+		<meta charset="UTF-8"> 
+		<title>Candidate Details</title> 
+		<style>
+			.required:after { content:"*"; color: red;}
+		</style>
+	</head> 
+	<body>
+		<form name="CandidateDetails" action="index2.jsp"> 
+			<table>
+				<tr>
+					<td class="required">Name</td>
+					<td><input type="text" name="name" pattern="[A-Za-z ]" maxlength="15" required></td>
+				</tr>
+				<tr>
+					<td class="required">Password</td>
+					<td><input type="password" name="password" maxlength="15" required></td>
+				</tr>
+				<tr>
+					<td class="required">Phone Number</td>
+					<td><input type="number" name="number" pattern="[0-9]{10}" maxlength="10" required></td>
+				</tr>
+					<td class="required">Gender</td>
+					<td>
+						<input type="radio" name="gender" required value="male">Male
+						<input type="radio" name="gender" required value="female">Female
+					</td>
+				</tr>
+				<tr>
+					<td class="required">Date of birth</td>
+					<td><input type="date" name="date" required max="2022-08-13"></td>
+				</tr>
+				<tr>
+					<td class="required">Email</td>
+					<td><input type="email" name="email" required></td>
+				</tr>
+				<tr>
+					<td class="required">Highest Qualification</td>
+					<td>
+						<datalist id="qualification"> 
+							<option value="B.Tech"> 
+							<option value="M.Tech"> 
+							<option value="MBA"> 
+							<option value="MCA"> 
+							<option value="MSc"> 
+							<option value="MA"> 
+							<option value="BSC"> 
+						</datalist>
+					</td>
+				</tr>
+				<tr>
+					<td class="required">Courses interested in:</td>
+					<td>
+						<input type="checkbox" name="course" required value="s-java">Java 
+						<input type="checkbox" name="course" required value="s-html">HTML5
+						<input type="checkbox" name="course" required value="s-css">CSS 3 
+						<input type="checkbox" name="course" required value="s-angular">Angular JS
+						<input type="checkbox" name="course" required value="s-jquery">JQuery
+					</td>
+				</tr>	
+				<tr>
+					<td>Comments: (Mention External Certifications if any)<td>
+					<textarea name="addr" Rows="5" cols="40" tabindex="0"> </textarea>
+				</tr>				
+				<tr>
+					<td class="required">Upload Degree/External Certificates:<td>
+					<input type="file" id="file" name="file">
+				</tr>				
+				<tr>
+					<td> <td>
+					<input type="submit" value="Submit Information">
+					<input type="reset" value="Clear">
+				</tr>				
+			</table>
+		</form>
+	</body>
+</html>

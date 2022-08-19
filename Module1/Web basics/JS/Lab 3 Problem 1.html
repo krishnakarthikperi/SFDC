@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Displaying Date using Date object</title>
+	</head>
+	<body>
+		<script>
+			function showTime()
+        {	var p = document.getElementById('clock');
+            var d=new Date();
+			days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+			months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+			let msg=''
+			if(d.getHours()<12) msg='Good Morning';
+			else if(d.getHours>17) msg='Good Evening';
+			else msg='Good Afternoon';
+            //document.write(days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+' '+d.getFullYear()+'<br>'+msg);
+            p.innerHTML=(days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+' '+d.getFullYear()+'<br>'+msg);
+        }
+        setInterval(showTime,1000)
+		</script>
+		<p id='clock'></p>
+	</body>

@@ -1,0 +1,26 @@
+package labExercises.lab6;
+
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.Temporal;
+import java.util.Date;
+import java.util.Scanner;
+
+public class problem6 {
+
+	public static void main(String[] args) {
+		System.out.println("Enter date in yyyy-MM-dd format");
+		Scanner usrip = new Scanner(System.in);
+		String str = usrip.nextLine();
+		LocalDate date = LocalDate.parse(str);
+		LocalDate now = LocalDate.now();
+		Period duration = Period.between(date, now);
+		System.out.println("Duration in days: "+duration.getDays());
+		System.out.println("Duration in months: "+duration.getMonths());
+		System.out.println("Duration in years: "+duration.getYears());
+		long durationInDays = Duration.between(now, date).getSeconds();
+		System.out.println(durationInDays);
+	}
+
+}

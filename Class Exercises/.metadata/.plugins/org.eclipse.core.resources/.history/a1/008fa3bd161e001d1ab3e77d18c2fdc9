@@ -1,0 +1,15 @@
+package Session3.exception;
+
+
+public class ExceptionHandling {
+
+	public static void main(String[] args) {
+		Calculator obj = new Calculator();
+		try {
+			obj.calculation();
+		}
+		catch (ArithmeticException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

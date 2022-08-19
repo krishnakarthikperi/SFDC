@@ -1,0 +1,19 @@
+package Session4.generics;
+
+import java.security.PublicKey;
+import java.util.List;
+
+public class Example {
+	public static void deleteBike(List<? extends Bike> l1,Example bikExample b1) {
+		l1.remove(b1);
+		System.out.println("Bike Removed");
+	}
+	public static Void addBike(List<? super Bullet> l2) {
+		l2.add(new Bullet("classic"));
+		System.out.println("Bike added");
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

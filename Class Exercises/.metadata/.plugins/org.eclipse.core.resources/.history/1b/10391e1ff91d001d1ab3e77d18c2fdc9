@@ -1,0 +1,11 @@
+package Session3.interfaces;
+
+public interface MyInterface {
+	void exisitingMethod(String str);
+	default void newMethod(){
+		System.out.println("Newly added default method");
+	}
+	static void anotherNewMethod() {
+		System.out.println("Newly added static method");
+	}	
+}

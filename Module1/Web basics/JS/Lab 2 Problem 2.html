@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Compound interest calculator</title>
+	</head>
+	<body>
+		<pre>
+		-----------------------------------
+		****Calculate Compound Interest****
+		-----------------------------------
+		</pre>
+		<script>
+			function interest(prinicipal,roi,period){
+				return prinicipal*((1+(roi/100))**period)-prinicipal
+			}
+			let prinicipal=1000
+			let roi=10
+			let period=1
+			document.write('Principal&emsp;&emsp;&emsp;&emsp;&emsp;-'+prinicipal+' rs'+'<br>Rate of interest&emsp;&emsp;&emsp;-'+roi+' %'+'<br>Period&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-'+period+' yr'+'<br>Comp Interest&emsp;&emsp;&emsp;-'+interest(prinicipal,roi,period));
+		</script>
+	</body>
+</html>

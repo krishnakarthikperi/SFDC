@@ -1,0 +1,1 @@
+SELECT * FROM staff_master WHERE mgr_code IS NULL

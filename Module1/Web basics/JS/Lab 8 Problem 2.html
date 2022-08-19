@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Validate Field</title>
+		<style>
+			body{
+				background-color:blue;
+			}
+			div{
+				border:5px solid white;
+				width:265px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <form> -->
+		<div>
+		<table>
+			<caption style="font-size:20; text-align:center;">Product Details</caption>
+			<tr>
+				<td>Category</td>
+				<td><select name="category" id="category" onchange="productList()">
+						<option value="Grocery">Grocery</option>
+						<option value="Electronics">Electronics</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Prodcut</td>
+				<td><select name="product" id="product">
+						<option value="40">Soap</option>
+						<option value="90">Powder</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Quantity</td>
+				<td><input id="quanitiy" type="number"></td>
+			</tr>
+			<tr>
+				<td>Total Price:</td>
+				<td><input id="totalPrice" type="number" readonly></td>
+			</tr>
+			<tr>
+				<td><button onclick="priceCalc()">Submit</button></td>
+				<td><button onclick="reset()">Reset</button></td>
+		</table>
+		</div>
+		<!-- </form> -->
+		<script>
+			Electronics = [['Television',20000],['Laptop',30000],['Phone',10000]];
+			Grocery = [['Soap',40],['Powder',90]];
+			function populate(item,index,arr){
+				let select = document.getElementById("product");
+				var opt = document.createElement("option");
+				opt.textContent=item[0];
+				opt.value=item[1];
+				select.appendChild(opt);
+			}
+			function productList(){
+				Category = document.getElementById("category").value;
+				
+				if(Category=="Electronics"){
+					deleteProducts();
+					Electronics.forEach(populate);	
+				}
+				else {
+					deleteProducts();
+					Grocery.forEach(populate);
+				}
+			}
+			function priceCalc(){
+				var Price = document.getElementById("product").value
+				var Quanitiy = document.getElementById("quanitiy").value
+				document.getElementById("totalPrice").value=Price*Quanitiy;
+			}
+			function deleteProducts(){
+				var parent = document.getElementById("product")
+				var child = parent.lastElementChild;
+				while(child){
+					parent.removeChild(child);
+					child = parent.lastElementChild;
+				}
+			}
+			function reset(){
+				document.getElementById("quanitiy").value="";
+				document.getElementById("totalPrice").value="";
+			}
+		</script>
+	</body>
+</html>

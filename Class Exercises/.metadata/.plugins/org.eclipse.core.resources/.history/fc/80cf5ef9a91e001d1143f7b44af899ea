@@ -1,0 +1,17 @@
+package Session4;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListDemo {
+
+	public static void main(String[] args) {
+		List list = new ArrayList();
+		list.add(2);
+		list.add("Hello");
+		list.add(45.23);
+		list.add(true);
+		System.out.println(list);
+	}
+
+}

@@ -1,0 +1,19 @@
+package session5;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+
+	public static void main(String[] args) {
+		try {
+			FileWriter fw= new FileWriter("src/resources/myFile.txt");
+			fw.write("Hello from my file");
+			fw.close();
+		} 
+		catch (IOException e) {
+			// TODO: handle exception
+		}
+	}
+
+}

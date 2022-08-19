@@ -1,0 +1,5 @@
+package Session3.interfaces;
+@FunctionalInterface
+public interface functional_interface {
+	void disp_msg(String msg);
+}

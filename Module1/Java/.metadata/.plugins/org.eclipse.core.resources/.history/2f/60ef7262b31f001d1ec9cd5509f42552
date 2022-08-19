@@ -1,0 +1,5 @@
+package labExercises.lab8.com.eis.service;
+
+public class invalidIdException {
+
+}

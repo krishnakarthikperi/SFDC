@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+	<head>
+		<title>Employee Details</title>
+	</head>
+	<body>
+		<form action="mailto:empinfo@capgemini.com" name="ab" method="post" enctype="multipart/form-data">
+			<table style="background-color:skyblue" border="1">
+				<tr>
+					<td>Employee Name:</td>
+					<td><input type="text" name="EmpName" maxlength="20" value="First Last" tabindex="3"></td>
+				</tr>
+				<tr>
+					<td>Employee Code:</td>
+					<td><input type="number" name="EmpCode" maxlength="4" value="1234"></td>
+				</tr>
+				<tr>
+					<td>Department</td>
+					<td>
+						<input type="radio" name="dept" value="grp1"> Admin
+						<input type="radio" name="dept" value="grp2"> HR 
+						<input type="radio" name="dept" value="grp3"> Technical
+						<input type="radio" name="dept" value="grp4"> Accounts
+					</td>
+				</tr>
+				<tr>
+					<td>Date of Join:</td>
+					<td><input type="date" name="doj" value="doj"></td>
+				</tr>
+				<tr>
+					<td>Address:<td>
+					<textarea name="addr" Rows="5" cols="40" tabindex="0" accesskey="A">Enter ur address </textarea>
+				</tr>
+				<tr>
+					<td>Training Program attended</td>
+					<td>
+						<input type="checkbox" name="s-html">HTML/DHTML 
+						<input type="checkbox" name="s-java" checked>Java 
+						<input type="checkbox" name="s-client">Client/Server 
+						<input type="checkbox" name="s-dotnet">.NET
+					</td>
+				</tr>
+				<tr>
+					<td>Training programs need to attend</td>
+					<td>
+						<select name="pref">
+							<option value="HTML">HTML/DHTML </option> 
+							<option value="JAVA">Java </option> 
+							<option value="Client">Client/Server </option> 
+							<option value="DOTNET">.NET </option> 
+						</select> 
+					</td>
+				</tr>
+				</tr>
+					<td>Send the information at</td>
+					<td><input type="Submit" Value="empinfo@capgemini.com" name="s-but"></td> 
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

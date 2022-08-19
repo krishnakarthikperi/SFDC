@@ -1,0 +1,19 @@
+package Session3.interfaces;
+
+public class Example implements MyInterface{
+
+	
+	public static void main(String[] args) {
+		MyInterface obj = new Example();
+		obj.exisitingMethod("Hello");
+		obj.newMethod();
+
+	}
+
+	@Override
+	public void exisitingMethod(String str) {
+		System.out.println("String is: "+str);
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package Session3.interfaces;
+
+public class FlightManager {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

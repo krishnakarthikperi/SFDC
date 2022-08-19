@@ -1,0 +1,1 @@
+TRUNCATE TABLE cust_table;

@@ -1,0 +1,29 @@
+package labExercises;
+
+class problem11{
+	problem11(){}
+	
+}
+
+class problem12{
+	problem12(){}
+	}
+
+class problem13{
+	public problem13(){}
+	
+}
+
+class problem14{
+	public problem14() {}
+}
+
+public class Lab1 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+
+
+	}
+
+}

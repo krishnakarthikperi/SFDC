@@ -1,0 +1,9 @@
+package Session3.interfaces;
+@FunctionalInterface
+public interface functional_interface {
+	void disp_msg(String msg);
+	//object class method
+	int hashCode();
+	String toString();
+	boolean equals(Object obj);
+}

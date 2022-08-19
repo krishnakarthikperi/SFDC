@@ -1,0 +1,24 @@
+package labExercises.lab6;
+
+import java.io.File;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class Problem1 {
+
+	public static void main(String[] args) {
+		File obj = new File("src/resources/myFile.txt");
+		Scanner sc = new Scanner(obj);
+		System.out.println("Reading from file");
+		while(sc.hasNext()) {
+			String line=sc.nextLine();
+			StringTokenizer tokens = new StringTokenizer(line);
+			int sum=0;
+			while(tokens.hasMoreTokens()) {
+				sum+=Integer.parseInt(tokens.nextToken());
+			}
+			System.out.println("Sum of integers= "+sum);
+
+		}
+	}	
+}

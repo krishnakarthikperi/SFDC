@@ -1,0 +1,10 @@
+.div_class{
+	text-align-last:center;
+	text-spacing:2px;
+	font:italic small-caps bold 30px Georgia;
+}
+.para_class{
+	text-align-last:left;
+	text-spacing:1px;
+	font:italic bold 12px Sanserif;
+}

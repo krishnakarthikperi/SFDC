@@ -1,0 +1,32 @@
+package Session3.exception;
+
+
+public class ExceptionDemo {
+	
+	public static int test() {
+		int a=10;
+		try {
+			System.out.println("In try");
+			throw new ArithmeticException();
+		}
+		catch (Exception e) {
+			System.out.println("In catch");
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		finally {
+			System.out.println("In finally");
+			throw new NullPointerException();
+			
+		}
+	}
+	public static void main(String[] args) {
+		Calculator obj = new Calculator();
+		test();
+		try {
+			obj.calculation();
+		}
+		catch (ArithmeticException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Location object</title>
+	</head>
+	<body>
+		<table border="1">
+			<thead>
+				<tr>
+					<th colspan="2">Location object properties</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>href</td>
+					<td id="href"> </td>
+				<tr>
+				<tr>
+					<td>pathname</td>
+					<td id="pathname"> </td>
+				<tr>
+				<tr>
+					<td>protocol</td>
+					<td id="protocol"> </td>
+				<tr>
+			</tbody>
+		<table>
+		<script>
+			document.getElementById('href').innerHTML=window.location.href;
+			document.getElementById('pathname').innerHTML=window.location.pathname;
+			document.getElementById('protocol').innerHTML=window.location.protocol;
+			
+		</script>
+	</body>
+</html>

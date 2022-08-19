@@ -1,0 +1,22 @@
+package Session3.exception;
+
+
+public class ExceptionDemo {
+	
+	public static boolean test() {
+		boolean flag=false;
+		try {
+			return true;
+		}
+		catch (Exception e) {}
+		finally {}
+		System.out.println("Outside try-catch-finally");
+		return flag;
+	}
+	public static void main(String[] args) {
+		//Calculator obj = new Calculator();
+		//test();
+		System.out.println(test());
+		
+	}
+}

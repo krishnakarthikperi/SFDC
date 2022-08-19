@@ -1,0 +1,22 @@
+package Session3.exception;
+
+
+public class ExceptionDemo {
+	
+	public static String test() {
+		int a=10;
+		try {
+			String string = null;
+			return string.toString();
+		}
+		finally {
+			return "Hello Finally";			
+		}
+	}
+	public static void main(String[] args) {
+		//Calculator obj = new Calculator();
+		//test();
+		System.out.println(test());
+		
+	}
+}

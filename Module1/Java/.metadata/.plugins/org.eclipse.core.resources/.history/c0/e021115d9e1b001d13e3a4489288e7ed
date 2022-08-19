@@ -1,0 +1,59 @@
+package lab1;
+
+class problem1{
+	problem1(){}
+	public int calculateSum(int n) {
+		int sum=0;
+		for(int i=1;i<=n;i++) {
+			if(i%3==0 || i%5==0) {
+				sum=sum+i;
+			}
+		}
+		return sum;
+	}
+}
+
+class problem2{
+	problem2(){}
+	public int calculateDifference(int n){
+		int firstTerm = 0;
+		int secondTerm = 0;
+		for(int i=1;i<=n;i++) {
+			firstTerm = firstTerm+(i*i);
+		}
+		for(int i=1;i<=n;i++) {
+			secondTerm = secondTerm+i;
+		}
+		secondTerm=secondTerm*secondTerm;
+		return firstTerm-secondTerm;
+	}
+}
+
+class problem3{
+	public problem3(){}
+	public boolean checkNumber(int n) {
+		String number = String.valueOf(n);
+		char digits[] = number.toCharArray();
+		for(int i=0;i<digits.length-1;i++) {
+			if(digits[i]>digits[i+1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+
+public class Lab1 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		problem1 P1 = new problem1();
+//		System.out.print(P2.calculateDifference(10));
+
+//		problem2 P2 = new problem2();
+//		System.out.print(P2.calculateDifference(10));
+
+		problem3 P3 = new problem3();
+		System.out.print(P3.checkNumber(134465));
+	}
+
+}

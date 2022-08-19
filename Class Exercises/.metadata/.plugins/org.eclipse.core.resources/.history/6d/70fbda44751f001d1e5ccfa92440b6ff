@@ -1,0 +1,20 @@
+package session5;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+
+	public static void main(String[] args) {
+		try {
+			FileWriter fw= new FileWriter("src/resources/myFile.txt");
+			fw.write("Hello from \nmy file");
+			fw.close();
+			System.out.println("Sucessfully wrote to the file");
+		} 
+		catch (IOException e) {
+			System.out.println("error occured: "+e.getMessage());
+		}
+	}
+
+}

@@ -1,0 +1,52 @@
+<html>
+	<head> 
+		<title> window example </title> 
+	</head> 
+	<script>
+		function nwindow(){ 
+			var Height = document.getElementById("height").value;
+			var Width = document.getElementById("width").value;
+			var Top = document.getElementById("top").value;
+			var Left = document.getElementById("left").value;
+			window.open("","_blank",`top=${Top},left=${Left},width=${Width},height=${Height}`);
+		} 
+	</script> 
+	<body > 
+		<form id="frmlab" onsubmit="nwindow()"> 
+			<table border="1" cellspacing="8" cellpadding="10" bordercolor="blue"> 
+				<thead>
+					<tr>
+						<td colspan="4" style="text-align:center;font-weight:bold;">Create a new window</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="4" style="text-align:center;font-weight:bold;">Window Size</td>
+					</tr>
+					<tr>
+						<td>Width:</td>
+						<td><input type="number" id="width"></td>
+						<td>Height:</td>
+						<td><input type="number" id="height"></td>
+					</tr>
+					<tr>
+						<td colspan="4" style="font-weight:bold;text-align:center;">Position</td>
+					</tr>
+					<tr>
+						<td>Left:</td>
+						<td><input type="number" id="left"></td>
+						<td>Top:</td>
+						<td><input type="number" id="top"></td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<!-- <button type="button" onclick="nwindow()" id="submit">Submit</button> -->
+							<input type="submit">
+						</td>
+						<td><input type="reset"></td>
+					</tr>
+				</tbody>
+			</table>
+		</form> 
+	</body> 
+</html> 

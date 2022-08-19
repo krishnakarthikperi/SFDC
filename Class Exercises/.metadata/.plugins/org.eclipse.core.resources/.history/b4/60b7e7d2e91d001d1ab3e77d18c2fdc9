@@ -1,0 +1,22 @@
+package Session3;
+
+class Parent{
+	public void doSomething() {
+		System.out.println("Doing smthng in parent class");
+	}
+}
+class Child extends Parent{
+	public void doSomething() {
+		System.out.println("Doing smthng in child class");
+	}
+}
+public class OverridingMethod {
+
+	public static void main(String[] args) {
+		Parent p= new Parent();
+		p.doSomething();
+		Parent p1 = new Child();
+		p1.doSomething();
+
+	}
+}

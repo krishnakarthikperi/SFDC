@@ -1,0 +1,26 @@
+package session5;
+
+public class Employee {
+	private String nameString;
+	private int id;
+	public Employee() {
+		super();
+	}
+	public String getNameString() {
+		return nameString;
+	}
+	public void setNameString(String nameString) {
+		this.nameString = nameString;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Employee [nameString=" + nameString + ", id=" + id + "]";
+	}
+	
+}

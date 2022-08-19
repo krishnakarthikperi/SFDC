@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using Arrays to display values</title>
+	</head>
+	<body>
+		List of Employees<br>
+		-----------------
+		<ol id="emp">
+		</ol>
+		<script>
+			var ol = document.getElementById('emp');
+			employees = ['Tove','Hege','Stale','Kai Jim','Borge']
+			employees.forEach(function addToList(item){
+				var li = document.createElement('li');
+				li.appendChild(document.createTextNode(item));
+				ol.appendChild(li);
+			})
+		</script>
+	</body>
+</html>

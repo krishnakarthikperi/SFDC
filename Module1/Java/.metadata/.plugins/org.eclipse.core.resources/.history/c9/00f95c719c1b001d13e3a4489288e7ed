@@ -1,0 +1,41 @@
+package lab1;
+
+class problem1{
+	problem1(){}
+	public int calculateSum(int n) {
+		int sum=0;
+		for(int i=1;i<=n;i++) {
+			if(i%3==0 || i%5==0) {
+				sum=sum+i;
+			}
+		}
+		return sum;
+	}
+}
+
+class problem2{
+	problem2(){}
+	public int calculateDifference(int n){
+		int firstTerm = 0;
+		int secondTerm = 0;
+		for(int i=1;i<=n;i++) {
+			firstTerm = firstTerm+i**2;
+		}
+		for(int i=1;i<=n;i++) {
+			secondTerm = secondTerm+i;
+		}
+		secondTerm=secondTerm**2;
+		return firstTerm-secondTerm;
+	}
+}
+
+public class Lab1 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		problem1 P1 = new problem1();
+		problem2 P2 = new problem2();
+
+		System.out.print(P2.calculateDifference(10));
+	}
+
+}

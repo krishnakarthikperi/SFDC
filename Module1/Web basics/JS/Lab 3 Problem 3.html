@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using various String methods</title>
+	</head>
+	<body>
+		<pre>
+		String is   			- <span id="string"></span>
+		Result of str.match('<span class="word"></span>')	- <span class="word"></span>
+		Result of str.substr('<span id="start"></span>','<span id="end"></span>')	- <span id="substring"></span>
+		<span id="lower"></span>
+		<span id="upper"></span>
+		</pre>
+		<script>
+			var string = prompt("Enter the string");
+			var word = prompt("Enter the word");
+			var start = prompt("Enter the starting index");
+			var end = prompt("Enter the ending index");
+			var String = document.getElementById('string');
+			var Word = document.getElementsByClassName('word');
+			var Start = document.getElementById('start');
+			var End = document.getElementById('end');
+			var Substring = document.getElementById('substring');
+			var Lower = document.getElementById('lower');
+			var Upper = document.getElementById('upper');
+			String.innerHTML=string;
+			Word[0].innerHTML=word;
+			Word[1].innerHTML=word;
+			Start.innerHTML=start;
+			End.innerHTML=end;
+			Substring.innerHTML=string.substr(start,end);
+			Lower.innerHTML=string.toLowerCase();
+			Upper.innerHTML=string.toUpperCase();
+		</script>
+	</body>
+</html>

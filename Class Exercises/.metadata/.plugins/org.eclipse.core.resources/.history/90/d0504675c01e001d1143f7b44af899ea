@@ -1,0 +1,23 @@
+package Session4.generics;
+
+import java.util.List;
+
+public class Example {
+	public static void deleteBike(List<? extends Bike> l1,Bike b1) {
+		l1.remove(b1);
+		System.out.println("Bike Removed");
+	}
+	public static void addBike(List<? super Bullet> l2) {
+		l2.add(new Bullet("classic"));
+		System.out.println("Bike added");
+	}
+	public static void printItems(List<?> list) {
+		for(Object i:list) {
+			System.out.println(i+" ");
+		}
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

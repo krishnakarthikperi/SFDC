@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Working with Documents</title>
+	</head>
+	<body>
+		<table border="1">
+			<caption style="font-size:20;">Prodcuts</caption>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Qty</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Barbie doll</td>
+					<td>Beautiful</td>
+					<td>20</td>
+					<td><input type="number" id="doll"></td>
+				</tr>
+				<tr>
+					<td>Calculator</td>
+					<td>Calculator with latest features</td>
+					<td>30</td>
+					<td><input type="number" id="calc"></td>
+				</tr>
+				<tr>
+					<td>Mobile Phone</td>
+					<td>Camera,Java Games, GPRS</td>
+					<td>40</td>
+					<td><input type="number" id="phone"></td>
+				</tr>
+				<tr>
+					<td>LG DVD</td>
+					<td>5 disc changer</td>
+					<td>50</td>
+					<td><input type="number" id="dvd"></td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="button" onclick="order()">Order</button>
+		<script>
+			function order(){
+				var doll = document.getElementById('doll').value;
+				var calc = document.getElementById('calc').value;
+				var phone = document.getElementById('phone').value;
+				var dvd = document.getElementById('dvd').value;
+				if(doll||calc||phone||dvd){
+					var totalDoll = doll*20;
+					var totalCalc = calc*30;
+					var totalPhone = phone*40;
+					var totalDvd = dvd*50;
+					const popup = window.open();
+					var invoiceTable=`<table border="1">
+						<caption style="font-size:20">Invoice</caption>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>`;
+					if(totalDoll){invoiceTable = invoiceTable+
+							`<tr>
+								<td>Barbie doll</td>
+								<td>Beautiful</td>
+								<td>20</td>
+								<td>${totalDoll}</td>
+							</tr>`;}
+					if(totalCalc){invoiceTable=invoiceTable+
+							`<tr>
+								<td>Calculator</td>
+								<td>Calculator with latest features</td>
+								<td>30</td>
+								<td>${totalCalc}</td>
+							</tr>`}
+					if(totalPhone){invoiceTable=invoiceTable+
+							`<tr>
+								<td>Mobile Phone</td>
+								<td>Camera,Java Games, GPRS</td>
+								<td>40</td>
+								<td>${totalPhone}</td>
+							</tr>`}
+					if(totalDvd){invoiceTable=invoiceTable+
+							`<tr>
+								<td>LG DVD</td>
+								<td>5 disc changer</td>
+								<td>50</td>
+								<td>${totalDvd}</td>
+							</tr>`}
+					invoiceTable=invoiceTable+
+						`</tbody>
+					</table>`;
+					popup.document.write(invoiceTable);
+				}
+				else alert("No item selected");
+			}
+		</script>
+	</body>
+</html>

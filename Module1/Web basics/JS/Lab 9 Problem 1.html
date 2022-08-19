@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Regular Expression</title>
+	</head>
+	<body>
+		<p>Regexp:<input type="text" id="regex"></p>
+		<p>Subject String:<input type="text" id="string"></p>
+		<div><button onclick="testMatch()">Test Match</button><button onclick="showMatch()">Show Match</button>
+		<script>
+			function testMatch(){
+				exp = document.getElementById("regex").value;
+				string = document.getElementById("string").value;
+				result = string.match(exp);
+				if(result){
+					alert("Successful Match");
+					return result;
+				}
+			}
+			function showMatch(){
+				result = testMatch();
+				alert(`Match at position ${result.index}: result[0]`);
+			}
+		</script>
+	</body>
+</html>

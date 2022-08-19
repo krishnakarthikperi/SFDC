@@ -1,0 +1,12 @@
+package Session4.generics;
+
+public class GenericsDemo {
+
+	public static void main(String[] args) {
+		BankAccount<String> b1 = new BankAccount<>("Hello");
+		BankAccount<Integer> b2 = new BankAccount<>(10);
+		b1.display();
+		b2.display();
+	}
+
+}

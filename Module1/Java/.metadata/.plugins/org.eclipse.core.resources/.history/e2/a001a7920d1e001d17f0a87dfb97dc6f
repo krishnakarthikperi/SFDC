@@ -1,0 +1,72 @@
+package labExercises;
+
+class problem11{
+	problem11(){}
+	public int calculateSum(int n) {
+		int sum=0;
+		int count=0;
+		for(int i=1;count<=n;i++) {
+			if(i%3==0 || i%5==0) {
+				sum=sum+i;
+				count++;
+			}
+		}
+		return sum;
+	}
+}
+
+class problem12{
+	problem12(){}
+	public int calculateDifference(int n){
+		int firstTerm = 0;
+		int secondTerm = 0;
+		for(int i=1;i<=n;i++) {
+			firstTerm = firstTerm+(i*i);
+		}
+		for(int i=1;i<=n;i++) {
+			secondTerm = secondTerm+i;
+		}
+		secondTerm=secondTerm*secondTerm;
+		return firstTerm-secondTerm;
+	}
+}
+
+class problem13{
+	public problem13(){}
+	public boolean checkNumber(int n) {
+		String number = String.valueOf(n);
+		char digits[] = number.toCharArray();
+		for(int i=0;i<digits.length-1;i++) {
+			if(digits[i]>digits[i+1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+
+class problem14{
+	public problem14() {}
+	public boolean checkNumber(int n) {
+	    if(n==0) return false;
+		return (int)(Math.ceil((Math.log(n) / Math.log(2)))) == (int)(Math.floor(((Math.log(n) / Math.log(2)))));
+	}
+}
+
+public class Lab1 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		problem11 P1 = new problem11();
+		System.out.print(P1.calculateSum(2));
+
+//		problem12 P2 = new problem12();
+//		System.out.print(P2.calculateDifference(10));
+
+//		problem13 P3 = new problem13();
+//		System.out.print(P3.checkNumber(134468));
+
+//		problem14 P4 = new problem14();
+//		System.out.print(P4.checkNumber(128));
+	}
+
+}

@@ -1,0 +1,5 @@
+package Session3.interfaces;
+@FunctionalInterface
+public interface functional_interface {
+	int calc(int num1,int num2);
+}

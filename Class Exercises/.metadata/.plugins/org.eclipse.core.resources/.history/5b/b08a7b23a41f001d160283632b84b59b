@@ -1,0 +1,23 @@
+package session5;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+public class FileCopyDemo {
+	private static final String SRC_FILE="src/resources/employee.txt";
+	private static final String DEST_FILE="src/resources/employeeCopy.txt";
+	public static void main(String[] args) {
+		Path src = Paths.get(SRC_FILE);
+		Path dest = Paths.get(DEST_FILE);
+		try {
+			Files.copy(src, dest,StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

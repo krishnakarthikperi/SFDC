@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form validation</title>
+	</head>
+	<body>
+		<ol>
+			<table>
+				<tr colspan="2"><td><h1>Enter Loan Information:</h1></td></tr>
+				<tr>
+					<td><li>Amount of the loan (any currency):</li></td>
+					<td><input id="amount" type="number" min="0" max="1500000"></td>
+				</tr>
+				<tr>
+					<td><li>Annual percentage rate of interest:</li></td>
+					<td><input id="roi" type="number" min="0" max="100"></td>
+				</tr>
+				<tr>
+					<td><li>Repayment period in years:</li></td>
+					<td><input id="period" type="number" min="7" max="15"></td>
+				</tr>
+				<tr>
+					<td><button type="button" onclick="calculatePayment()">Compute</button></td>
+				</tr>
+				<tr colspan="2"><td><h1>Payment Information:</h1></td></tr>
+				<tr>
+					<td><li>Your monthly payment will be:</li></td>
+					<td><input id="monthly" type="number" readonly></td>
+				</tr>
+				<tr>
+					<td><li>Your total payment will be:</li></td>
+					<td><input id="total" type="number" readonly></td>
+				</tr>
+				<tr>
+					<td><li>Your total interest payments will be:</li></td>
+					<td><input id="interest" type="number" readonly></td>
+				</tr>
+			</table>
+		</ol>
+		<script>
+			function calculatePayment(){
+				var Amount = document.getElementById("amount").value;
+				var Roi = document.getElementById("roi").value;
+				var Period = document.getElementById("period").value;
+				if(Amount<=1500000 && (7<=Period && Period<=15)){
+					var totalInterest = Amount*Roi*Period/100;
+					var monthlyInterest = totalInterest/(12*Period);
+					var totalPaymentAmount = Amount+totalInterest;
+					document.getElementById("monthly").value=monthlyInterest;
+					document.getElementById("total").value=totalPaymentAmount;
+					document.getElementById("interest").value=totalInterest;
+				}
+				else{
+					if(Amount>=1500000) alert('Amount of Loan should not be more than 15 lakhs.')
+					else alert('Repayment period should be between 7 yrs to 15 yrs.')
+				}
+			}
+		</script>
+	</body>
+</html>

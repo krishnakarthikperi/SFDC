@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Using indexOf function of String object</title>
+	</head>
+	<body>
+		<pre>
+		The actual string is   			- <span id="string"></span>
+		The character to be searched for is	- <span id="character"></span>
+		The character is found at the index	- <span id="position"></span>
+		</pre>
+		<script>
+			var string = prompt("Enter the string");
+			var character = prompt("Enter the character");
+			String = document.getElementById('string');
+			Character = document.getElementById('character');
+			Position = document.getElementById('position');
+			String.innerHTML=string;
+			Character.innerHTML=character;
+			Position.innerHTML=string.indexOf(character);
+		</script>
+	</body>
+</html>
