@@ -1,0 +1,6 @@
+<p>Data from parnet to child</p>
+<p>{{itemParentToChild}}</p>
+<hr>
+<p>Data from child to parent</p>
+<input type="text" #childBox>
+<button (click)="updateParentDataEvent.emit(childBox.value)">Update Data in child</button>

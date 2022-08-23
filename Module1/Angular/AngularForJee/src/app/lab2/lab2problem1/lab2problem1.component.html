@@ -1,0 +1,65 @@
+<h2>Lab2 Problem1:</h2>
+<h3>Add Employee</h3>
+<table>
+    <tr>
+        <td>ID</td>
+        <td><input type="number" [(ngModel)]="empId"></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input [(ngModel)]="empName" type="text" ></td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td><input [(ngModel)]="empSal" type="number" ></td>
+    </tr>
+    <tr>
+        <td>Department</td>
+        <td><input [(ngModel)]="empDept" type="text" ></td>
+    </tr>
+    <tr>
+        <td><button (click)="addEmpDetails()" type="button">Add Employee</button></td>
+    </tr>
+</table>
+<h3>Show All EMPLOYEE</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th colspan="2">ACTION</th>
+        </tr>
+        <tr *ngFor="let emp of employeeDetails; let i = index">
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empSal}}</td>
+            <td>{{emp.empDep}}</td>
+            <td><button type="button" (click)="showUpdateDetails(i)">UPDATE</button></td>
+            <td><button type="button" (click)="deleteEmpDetails(i)">DELETE</button></td>
+        </tr>
+    </thead>
+</table>
+<h3>Update Employee</h3>
+<table>
+    <tr>
+        <td>ID</td>
+        <td><input type="number" [(ngModel)]="empIdUpdate"></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><input [(ngModel)]="empNameUpdate" type="text" ></td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td><input [(ngModel)]="empSalUpdate" type="number" ></td>
+    </tr>
+    <tr>
+        <td>Department</td>
+        <td><input [(ngModel)]="empDeptUpdate" type="text" ></td>
+    </tr>
+    <tr [(ngModel)]="updateIndex">
+        <td><button type="button" (click)="updateEmpDetails(updateIndex)">Update Employee</button></td>
+    </tr>
+</table>

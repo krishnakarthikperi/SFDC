@@ -1,0 +1,67 @@
+<h1>{{title}}</h1>
+<h2>Custom directives</h2>
+  <ul style="list-style-type:none;">
+    <li><div>
+      <p>Normal heading</p>
+      <p appCustomStyle>Custom Directie heading</p>
+      <hr>
+    </div></li>
+  </ul>
+ 
+<h2>Structural Diretives</h2>
+  <ul style="list-style-type:none;">
+    <li><div>
+      <h3>ngIF Demo</h3>
+      <ul style="list-style-type:none;">
+        <li><div>    
+          <div *ngIf="showIfElse">
+            <p>If condition</p>
+          </div>
+          <div *ngIf="valueIfElse=='12' then ifBlock else elseBlock">
+            <p>If condition</p>
+          </div>
+          <ng-template #ifBlock>
+            <p>If block</p>
+          </ng-template>
+          <ng-template #elseBlock>
+            <p>Else block</p>
+          </ng-template>
+          <ng-template [ngIf]="color=='red'">
+            <b style="color:red;">Red Color</b>
+          </ng-template>
+          <ng-template [ngIf]="color=='green'">
+            <b style="color:green;">Green Color</b>
+          </ng-template>
+          <ng-template [ngIf]="color=='blue'" [ngIfElse]="elseBlockColor">
+            <b style="color:blue;">blue Color</b>
+          </ng-template>
+          <ng-template #elseBlockColor>
+            <b>No color matched</b>
+          </ng-template>
+        </div></li>
+      </ul>
+    </div></li>
+    <div><li>
+    <h3>ngFor Demo</h3>
+      <ul style="list-style-type:none;">
+        <li><div>
+          <ul>
+            <li *ngFor="let item of users">Name is :{{item}}</li>  
+          </ul>  
+        </div></li>
+        <li><div *ngFor="let user of userDetails">
+          Details:{{user.name}} -------- {{user.email}}-------{{user.age}}
+        </div></li>
+      </ul>
+    </li></div>
+    <div><li>
+      <h3>ngSwitch Demo</h3>
+      <ul style="list-style-type:none;">
+        <li *ngSwitchCase="'red'" style="color:red;">Red Color</li>
+        <li *ngSwitchCase="'green'" style="color:green;">Green Color</li>
+        <li *ngSwitchCase="'blue'" style="color:blue;">Blue Color</li>
+        <li *ngSwitchDefault>Unknown Color</li>
+      </ul>
+    </li></div>
+  </ul>
+  
