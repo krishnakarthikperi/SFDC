@@ -1,0 +1,18 @@
+{
+  "products": [
+    {},
+    {
+      "id": 101,
+      "name": "Mi",
+      "cost": 10000.01,
+      "isOnline": "true",
+      "category": "Mobile",
+      "availableInStore": {
+        "bigBazar": true,
+        "dMart": true,
+        "reliance": true,
+        "megaStore": true
+      }
+    }
+  ]
+}

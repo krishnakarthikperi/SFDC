@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "vidya",
+      "email": "vidyasree@gmail.com",
+      "phone": 1234567890
+    },
+    {
+      "id": 2,
+      "name": "vidya",
+      "email": "vidyasree@gmail.com",
+      "phone": 1234567890
+    },
+    {
+      "name": "John",
+      "email": "john@jmail.com",
+      "phone": 123456765,
+      "course": "JSON",
+      "timePreference": "morning",
+      "feedback": true,
+      "id": 3
+    }
+  ]
+}

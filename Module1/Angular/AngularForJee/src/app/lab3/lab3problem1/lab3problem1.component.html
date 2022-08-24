@@ -1,0 +1,54 @@
+<p>Lab3 Problem1</p>
+<div class="container-fluid">
+    <form #productForm="ngForm" class="css-form" novalidate>
+        <table>
+            <tr>
+                <td>Product ID</td>
+                <td><input type="number" pattern="^[0-9]{1,}$" required #id="ngModel" name="id" ngModel [class.is-invalid]="id.invalid && id.touched" class="form-control is-invalid"></td>
+            </tr>
+            <small class="text-danger" [class.d-none]="id.untouched||id.valid">ID must be a number</small>
+            <tr>
+                <td>Product Name</td>
+                <td><input type="text" pattern="^[A-Za-z0-9_ ]{1,}$" required #name="ngModel" name="name" ngModel [class.is-invalid]="name.invalid && name.touched" class="form-control is-invalid"></td>
+            </tr>
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name must contain only alphanumerals, spaces and hyphens</small>
+            <tr>
+                <td>Product Cost</td>
+                <td><input type="number" pattern="^(\d{1,}\.\d{2})||(\d{1,})$" required #cost="ngModel" name="cost" ngModel [class.is-invalid]="cost.invalid && cost.touched" class="form-control is-invalid"></td>
+            </tr>
+            <small class="text-danger" [class.d-none]="cost.valid || cost.untouched">Cost must be either in ₹XX format or ₹xx.xx format</small>
+            <tr>
+                <td>Product Online</td>
+                <td>
+                    <input type="radio" required #isOnline="ngModel" name="isOnline" value="true" ngModel>
+                    <label>Yes</label>
+                    <input type="radio" required #isOnline="ngModel" name="isOnline" value="false" ngModel>
+                    <label>No</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Product Category</td>
+                <td>
+                    <select required #category="ngModel" name="category" ngModel [class.is-invalid]="category.invalid && category.touched">
+                        <option *ngFor="let cat of categories">{{cat}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Available in store</td>
+                <td>
+                    <input type="checkbox" #bigBazar="ngModel" name="bigBazar" ngModel checked="bigBazar">
+                    <label for="bigBazar">Big Bazar</label>
+                    <input type="checkbox" #dMart="ngModel" name="dMart" ngModel [checked]="dMart">
+                    <label for="bigBazar">DMart</label>
+                    <input type="checkbox" #reliance="ngModel" name="reliance" ngModel checked="reliance">
+                    <label for="bigBazar">Reliance</label>
+                    <input type="checkbox" #megaStore="ngModel" name="megaStore" ngModel checked="megaStore">
+                    <label for="bigBazar">Mega Store</label>
+                </td>
+            </tr>
+            <small class="text-danger" [class.d-none]="bigBazar.value&&dMart.value&&reliance.value&&megaStore.value">Select atleast one of the stores</small>
+        </table>
+        <button type="submit" (click)="onSubmit(productForm.value)" [disabled]="!productForm.form.valid">Add Product</button>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<p>Lab2 Problem2:</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th (click)="sortById()">ID</th>
+            <th (click)="sortByName()">NAME</th>
+            <th (click)="sortBySalary()">SALARY</th>
+            <th (click)="sortByDept()">DEPARTMENT</th>
+            <th>JOINING DATE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employeeDetails">
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empSal}}</td>
+            <td>{{emp.empDep}}</td>
+            <td>{{emp.empjoiningdate}}</td>
+        </tr>
+    </tbody>
+</table>
