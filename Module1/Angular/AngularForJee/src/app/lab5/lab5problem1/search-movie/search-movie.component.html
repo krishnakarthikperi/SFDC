@@ -1,0 +1,22 @@
+<div>
+    <select required #genre="ngModel" name="genre" ngModel [class.is-invalid]="genre.invalid && genre.touched" (change)="hideSearchMovies()">
+        <option *ngFor="let gen of genres">{{gen}}</option>
+    </select>
+</div>
+<button type="button" [disabled]="!genre.valid" (click)="showSearchMovies()">Search Movie</button>
+<div *ngIf=isVisible>
+    <table>
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movies | movieGenre:genre.value">
+                <td>{{movie.name}}</td>
+                <td>{{movie.rating}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

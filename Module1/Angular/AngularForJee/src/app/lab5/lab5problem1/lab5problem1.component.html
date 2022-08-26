@@ -1,0 +1,9 @@
+<p>Lab5 Problem1</p>
+<h1>Welcome to Mobiles App</h1>
+<div>
+<!--     <a [routerLink]="'/lab5/problem1/addMovie'">Add Movies</a><br> -->
+    <a class="p-1 rounded" [routerLink]="['/lab5/problem1/',{ outlets: { 'secondary': ['addMovie'] } }]">Add Movies</a><br>
+<!--     <a [routerLink]="'/lab5/problem1/searchMovie'">Search Movie by Category</a> -->
+    <a class="p-1 rounded" [routerLink]="['/lab5/problem1/',{ outlets: { 'secondary': ['searchMovie'] } }]">Search Movie by Category</a>
+</div>
+<router-outlet name='secondary'></router-outlet>

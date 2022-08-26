@@ -1,0 +1,34 @@
+{
+  "movies": [
+    {
+      "name": "Bheemla",
+      "rating": 4,
+      "genre": "Drama",
+      "id": 1
+    },
+    {
+      "name": "af",
+      "rating": 8,
+      "genre": "Drama",
+      "id": 2
+    },
+    {
+      "name": "1",
+      "rating": 1,
+      "genre": "Fiction",
+      "id": 3
+    },
+    {
+      "name": "76",
+      "rating": 5,
+      "genre": "",
+      "id": 4
+    },
+    {
+      "name": "Fictio",
+      "rating": 4,
+      "genre": "Fiction",
+      "id": 5
+    }
+  ]
+}

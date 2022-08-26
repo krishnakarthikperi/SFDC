@@ -1,0 +1,21 @@
+<form #movieForm="ngForm" class="css-form" novalidate (submit)="addMovie(movieForm.value)">
+<div>
+    <label>Movie Name</label>
+    <input type="text" pattern="^[A-Za-z0-9 ]{1,}$" required #name="ngModel" name="name" ngModel [class.is-invalid]="name.invalid && name.touched" class="form-control is-invalid">
+    <br>
+    <small class="text-danger" [class.d-none]="name.valid || name.untouched">Movie name must be only alphanumneric</small>
+</div>
+<div>
+    <label>Give Rating:</label>
+    <input type="number" pattern="^([1-5]{1}\.\d{1})|([1-5]{1})$" required #rating="ngModel" name="rating" ngModel [class.is-invalid]="rating.invalid && rating.touched" class="form-control is-invalid">
+    <br>
+    <small class="text-danger" [class.d-none]="rating.valid || rating.untouched">Rating needs to be a number: eg: 2.5. Rating is on Scale 1-5</small>
+</div>
+<div>
+    <select required #genre="ngModel" name="genre" ngModel [class.is-invalid]="genre.invalid && genre.touched">
+        <option *ngFor="let gen of genres">{{gen}}</option>
+    </select>
+    <small class="text-danger" [class.d-none]="genre.valid || genre.untouched">Select Genre!!!</small>
+</div>
+<button type="submit" [disabled]="!movieForm.form.valid">Add Movie</button>
+</form>
