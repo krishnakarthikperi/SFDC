@@ -1,0 +1,25 @@
+<p>Lab4 Problem2</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Book ID {{id}}</th>
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Book Year of Publish</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="number" [(ngModel)]=id id="id" placeholder="Filter by ID" (input)="filterById()"></td>
+            <td><input type="text" [(ngModel)]=title id="title" placeholder="Filter by Title" (input)="filterByTitle()"></td>
+            <td><input type="text" [(ngModel)]=author id="author" placeholder="Filter by Author" (input)="filterByAuthor()"></td>
+            <td><input type="number" [(ngModel)]=year id="year" placeholder="Filter by Year Published" (input)="filterByYear()"></td>
+        </tr>
+     .   <tr *ngFor="let book of showBooks">
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
+        </tr>
+    </tbody>
+</table>

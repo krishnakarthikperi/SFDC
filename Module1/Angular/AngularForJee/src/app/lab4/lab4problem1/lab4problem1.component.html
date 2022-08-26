@@ -1,0 +1,19 @@
+<p>Lab4 Problem1</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Book Year of Publish</th>
+        </tr>
+    </thead>
+    <tbody>
+     .   <tr *ngFor="let book of books  ">
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.author}}</td>
+        </tr>
+    </tbody>
+</table>
